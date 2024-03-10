@@ -39,6 +39,11 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+        steps:
+  - name: Setup Ruby
+    uses: ruby/setup-ruby@v1
+    with:
+      ruby-version: '3.2.3'
 
   lint:
     runs-on: ubuntu-latest
