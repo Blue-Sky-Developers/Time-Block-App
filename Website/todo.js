@@ -1,6 +1,7 @@
 onload = todoMain;
 
 function todoMain(){
+  const DEFAULT_OPTION = "choose category ";
   let inputElem,
       inputElem2,
       button,
@@ -66,8 +67,11 @@ function todoMain(){
     trElem.appendChild(tdElem4);
 
     
+    updateSelectOptions();
+
     function deleteItem(){
       trElem.remove();
+      updateSelectOptions()
     }
 
     function done(){
@@ -93,12 +97,56 @@ function todoMain(){
           return;
         }
         if(category = selectElem.value) {
-          row.style.display = "";
+          row.style.display = DEFAULT_OPTION;
         } else {
           row.style.display = "none";
         }
       });
     }
+  }
+
+
+  function updateSelectOptions() {
+    let options = [];
+
+    let rows = document.getElementsByTagName("tr");
+      
+    Array.from(rows).forEach((row, index) => {
+     if (index == 0) {
+      return;
+      }
+
+      let category = row.getElementsByTagName("td")
+      [2].innerText;
+
+     // if (!options.includes (category)) {
+        options.push(category);
+     // } 
+
+    });
+
+
+    let optionsSet = new Set (options);
+
+
+  //empty the select options 
+  selectElem.innerHTML = "";
+
+  let newOptionElem = document.createElement
+  ('option');
+  newOptionElem.value = DEFAULT_OPTION;
+  newOptionElem.innerText = DEFAULT_OPTION;
+  selectElem.appendChild(newOptionElem);
+
+  //options.forEach((option)=>{
+  for (let option of optionsSet){
+    let newOptionElem = document.createElement
+    ('option');
+    newOptionElem.value = option;
+    newOptionElem.innerText = option;
+    selectElem.appendChild(newOptionElem);
+    }
+
 
   }
 }
