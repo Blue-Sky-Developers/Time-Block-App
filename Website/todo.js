@@ -1,11 +1,13 @@
-todoMain();
+onload = todoMain;
 
 function todoMain(){
-    getElements ();
-    addListeners();
+  let inputElem,
+      ulElem;
 
+  getElements();
+  addListeners();
 
-function getElements(){
+  function getElements(){
     inputElem = document.getElementsByTagName("input")[0];
     ulElem = document.getElementsByTagName("ul")[0];
   }
@@ -21,7 +23,19 @@ function getElements(){
 
     let liElem = document.createElement("li");
     liElem.innerText = inputValue;
-    
+
+    let spanElem = document.createElement("span");
+    spanElem.innerText = "delete";
+    spanElem.className = "material-icons";
+
+    spanElem.addEventListener("click", deleteItem, false);
+
+    liElem.appendChild(spanElem);
+
     ulElem.appendChild(liElem);
+
+    function deleteItem(){
+      liElem.remove();
+    }
   }
 }
