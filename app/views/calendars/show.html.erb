@@ -1,0 +1,7 @@
+<%= week_calendar class: "calendar" do |date, events| %>
+    <div class="day" data-date="<%= date %>">
+        <div class="date-header">
+            <%= date.strftime('%A, %B %e') %>
+        </div>
+    </div>
+<% end %>
