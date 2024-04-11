@@ -48,3 +48,18 @@
   .btn-primary:hover {
     background-color: #0056b3;
   }
+
+
+  .events-container {
+    background-color: #0056b3; /* Replace #gray with the actual gray color code you want to use */
+    padding: 20px; /* Or any other value that suits your design */
+    margin: auto; /* This will center the container if it has a set width */
+    width: 90%; /* Or 100%, depending on your layout requirements */
+  }
+ 
+  .event {
+    border: 1px solid #0056b3; /* Replace #000000 with the color code for the border */
+    margin-bottom: 15px; /* Adds space between events */
+    padding: 10px; /* Adds space inside the border */
+  }
+  
