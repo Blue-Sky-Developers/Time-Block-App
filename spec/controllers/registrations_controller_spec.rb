@@ -65,6 +65,14 @@ RSpec.describe RegistrationsController, type: :controller do
       post :create, params: { user: valid_attributes }
       expect(session[:user_id]).to eq(User.find_by(email: valid_attributes[:email]).id)
     end
+
+    # Condition testing:
+    it "tests the condition for password confirmation mismatch" do
+        invalid_confirmation_attributes = valid_attributes.merge(password_confirmation: "different")
+        post :create, params: { user: invalid_confirmation_attributes }
+        expect(response).to render_template(:new)
+        expect(assigns(:user).errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
   end
 
 end
