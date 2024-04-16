@@ -5,9 +5,7 @@ RSpec.describe MainController, type: :controller do
     it "assigns @user when user is logged in" do
       user = create(:user)
       session[:user_id] = user.id
-
       get :index
-
       expect(assigns(:user)).to eq(user)
     end
 
