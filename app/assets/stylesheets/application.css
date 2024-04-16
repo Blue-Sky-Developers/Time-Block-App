@@ -117,3 +117,67 @@ a{
   color: #3366ff;
   text-decoration: none;
 }
+
+li{
+  font-size: 20px;
+}
+
+.kalam-light {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kalam-bold {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.text-box {
+  padding: 10px;
+  border: 2px solid #9b9b9b;
+  border-radius: 5px;
+  margin: 5px;
+  width: 100%;
+  background-color: #a8f5ff;
+  box-shadow: 10px 10px lightblue;
+}
+
+.slogan1{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  background-color: #e1a7fb;
+  display: inline-block;
+}
+
+.slogan2{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+  background-color: #a6e1c5;
+  display: inline-block;
+}
+
+.center-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-size: 50px;
+  font-family: "Kalam", cursive;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center; /* Center the text horizontally */
+  margin: 10px;
+}
+
