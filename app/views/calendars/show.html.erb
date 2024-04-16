@@ -1,7 +1,11 @@
 <div class="week-calendar-container">
-  <%= week_calendar events: @events do |date, events| %>
-    <div>
+  <div class="cal-week">
+    <%= week_calendar events: @events do |date, events| %>
+  </div>
+    <div class="cal-date">
       <%= date.strftime('%B %d, %Y') %>
+    </div>
+    <hr>
       <% events.each_with_index do |event, index| %>
         <div class="event-wrapper">
           <div class="event-container" style="top: <%= index * 100 %>px;">
@@ -10,7 +14,7 @@
                 <h3><%= event.name %></h3>
                 <p>
                   <strong>Start Time:</strong> <%= event.start_time.strftime('%I:%M %p') %><br>
-                  <strong>End Time:</strong> <%= event.end_time.strftime('%I:%M %p') %>
+                  <strong>End Time:  </strong> <%= event.end_time.strftime('%I:%M %p') %>
                 </p>
               </div>
             <% end %>
