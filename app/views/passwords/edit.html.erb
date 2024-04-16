@@ -1,25 +1,33 @@
-<h1> Edit Password </h1>
+<div class="container mt-5">
 
-
-<%= form_with model: Current.user, url: edit_password_path, data: { turbo: true } do |form| %>
-    <% if form.object.errors.any? %>
-        <div class="alert alert-danger">
-            <% form.object.errors.full_messages.each do |message| %>
-                <div><%= message %></div>
-            <% end %>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= form_with model: Current.user, url: edit_password_path, local: true, data: { turbo: false } do |form| %>
+        <% if form.object.errors.any? %>
+          <div class="alert alert-danger">
+            <strong>Please fix the following errors:</strong>
+            <ul>
+              <% form.object.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="mb-3">
+          <%= form.label :password, class: 'form-label' %>
+          <%= form.password_field :password, class: "form-control", placeholder: "Enter new password" %>
         </div>
-    <% end %>
-    <div class="mb-3">
-        <%= form.label :password %>
-        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+        <div class="mb-3">
+          <%= form.label :password_confirmation, class: 'form-label' %>
+          <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm new password" %>
+        </div>
+        
+        <div class="mb-3">
+          <%= form.submit "Update Password", class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
-    <div class="mb-3">
-        <%= form.label :password_confirmation %>
-        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
-    </div>
-    
-    <div class="mb-3">
-    <%= form.submit "Update Password", class: "btn btn-primary" %>
-    </div>
-<% end %>
+  </div>
+</div>
+
 
