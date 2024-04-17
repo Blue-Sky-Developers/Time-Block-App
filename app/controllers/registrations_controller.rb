@@ -12,6 +12,20 @@ class RegistrationsController < ApplicationController
         end
     end
 
+    def update
+        @user = Current.user # or however you access the current user
+      
+        # Strong parameters, allow updating email and password
+        if @user.update(user_params)
+          # Redirect or handle success
+          redirect_to some_path, notice: "Profile updated successfully."
+        else
+          # Render form again with error messages
+          render :edit
+        end
+      end
+      
+
     private
 
     def user_params
