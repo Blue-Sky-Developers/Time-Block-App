@@ -23,7 +23,6 @@
 
 .day {
   border: 1px solid #ccc;
-  border-radius: 8px;
   padding: 10px;
   background-color: #f9f9f9;
 }
@@ -179,5 +178,11 @@ li{
   font-style: normal;
   text-align: center; /* Center the text horizontally */
   margin: 10px;
+  background-color: white;
+  border-radius: 5px;
 }
 
+.background{
+  background-color: #ffbf80;
+  border: 10px solid #a8601c;
+}
