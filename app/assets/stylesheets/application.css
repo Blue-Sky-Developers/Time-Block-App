@@ -195,6 +195,10 @@ li{
   text-align: center; /* Center the text horizontally */
   margin: 10px;
 }
+.background{
+  background-color: #ffbf80;
+  border: 10px solid #a8601c;
+}
 
 body {
   font-family: 'Montserrat', serif; /* Use Montserrat font for the entire page */
