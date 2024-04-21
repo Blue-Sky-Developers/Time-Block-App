@@ -16451,3 +16451,341 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 5896)
 
 
+Started GET "/" for 127.0.0.1 at 2024-04-21 11:45:16 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 268)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 591)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 225)
+  Rendered layout layouts/application.html.erb (Duration: 99.8ms | Allocations: 36747)
+Completed 200 OK in 136ms (Views: 102.9ms | ActiveRecord: 1.2ms | Allocations: 53426)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-04-21 11:45:18 -0400
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 198)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 144)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1588)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 2638)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:18 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1676)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2024-04-21 11:45:18 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 3037)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 33)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4406)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 5441)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-04-21 11:45:20 -0400
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 138)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1392)
+Completed 200 OK in 23ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 2189)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:21 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1125)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2024-04-21 11:45:21 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2140)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3513)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 4326)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-04-21 11:45:21 -0400
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 138)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1375)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 2155)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-21 11:45:25 -0400
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 138)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1375)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 2466)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:25 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+Redirected to http://127.0.0.1:3000/sign_in
+Filter chain halted as :require_login rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1113)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2024-04-21 11:45:25 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2138)
+  Rendered shared/_navbar.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3499)
+Completed 200 OK in 30ms (Views: 21.6ms | ActiveRecord: 0.1ms | Allocations: 4295)
+
+
+Started GET "/sign_up" for 127.0.0.1 at 2024-04-21 11:45:27 -0400
+Processing by RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1318)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2693)
+Completed 200 OK in 74ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 10611)
+
+
+Started POST "/sign_up" for 127.0.0.1 at 2024-04-21 11:45:33 -0400
+Processing by RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"avalonwalmart@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["email", "avalonwalmart@gmail.com"], ["password_digest", "[FILTERED]"], ["created_at", "2024-04-21 15:45:33.953177"], ["updated_at", "2024-04-21 15:45:33.953177"]]
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/registrations_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 204ms (ActiveRecord: 6.0ms | Allocations: 3866)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-21 11:45:33 -0400
+Processing by MainController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 251)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1550)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 2733)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:35 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 3.9ms | Allocations: 2588)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 8.0ms | Allocations: 4034)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 211)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5486)
+Completed 200 OK in 38ms (Views: 13.0ms | ActiveRecord: 0.4ms | Allocations: 14968)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-04-21 11:45:36 -0400
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 225)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1462)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2255)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-21 11:45:36 -0400
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 223)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1460)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2541)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:37 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 23.0ms | Allocations: 1474)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 24.8ms | Allocations: 2124)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 209)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 3576)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.2ms | Allocations: 4961)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:37 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 1.8ms | Allocations: 1473)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2124)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3572)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 4962)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2024-04-21 11:45:38 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:25:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 5375)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 6820)
+Completed 200 OK in 54ms (Views: 18.9ms | ActiveRecord: 0.1ms | Allocations: 15324)
+
+
+Started POST "/events" for 127.0.0.1 at 2024-04-21 11:45:46 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"morning copy", "start_time(1i)"=>"2024", "start_time(2i)"=>"4", "start_time(3i)"=>"21", "start_time(4i)"=>"13", "start_time(5i)"=>"45", "end_time(1i)"=>"2024", "end_time(2i)"=>"4", "end_time(3i)"=>"21", "end_time(4i)"=>"15", "end_time(5i)"=>"45", "priority"=>"medium"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:25:in `require_login'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:11:in `create'
+  [1m[36mEvent Create (1.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_time", "end_time", "created_at", "updated_at", "user_id", "priority") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "morning copy"], ["start_time", "2024-04-21 13:45:00"], ["end_time", "2024-04-21 15:45:00"], ["created_at", "2024-04-21 15:45:46.910536"], ["updated_at", "2024-04-21 15:45:46.910536"], ["user_id", 12], ["priority", 1]]
+  ↳ app/controllers/events_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/calendar
+Completed 302 Found in 24ms (ActiveRecord: 1.7ms | Allocations: 13957)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:45:46 -0400
+Processing by CalendarsController#show as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 1.2ms | Allocations: 1473)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2124)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 209)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3581)
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 4970)
+
+
+Started GET "/calendar?start_date=2024-04-21" for 127.0.0.1 at 2024-04-21 11:45:50 -0400
+Processing by CalendarsController#show as HTML
+  Parameters: {"start_date"=>"2024-04-21"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 2.3ms | Allocations: 1907)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2585)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 209)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4034)
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 5449)
+
+
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
