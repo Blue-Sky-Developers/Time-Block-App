@@ -73,6 +73,7 @@
 
 .tip{
   font-size: 20px;
+  font-weight: bold;
   width: 100%;
   background-color: #fffdc9;
   border-radius: 5px;
@@ -127,7 +128,6 @@
   color: #333;
   margin-bottom: 10px;
   text-align: center;
-  background-color: white;
 }
 
 .cal-week{
@@ -137,7 +137,6 @@
   text-align: center;
   font-size: 20px;
   width: 100%;
-  background-color: white;
 }
 
 a{
@@ -210,6 +209,6 @@ li{
   border-radius: 5px;
 }
 .background{
-  background-color: #ffbf80;
+  background-color: #fcd792;
   border: 10px solid #a8601c;
 }
