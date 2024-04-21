@@ -5,9 +5,9 @@
         <%= date.strftime('%B %d, %Y') %>
       </div>
       <hr>
-      <% events.each_with_index do |event, index| %>
-        <div class="event-wrapper <%= "priority-#{event.priority}" %>">
-          <div class="event-container" style="top: <%= (index * 100).to_s + 'px' %>;">
+      <% events.each do |event| %>
+        <div class="event-wrapper priority-<%= event.priority %>">
+          <div class="event-container">
             <%= link_to edit_event_path(event) do %>
               <div class="event">
                 <h3><%= event.name %></h3>
@@ -20,8 +20,7 @@
           </div>
         </div>
       <% end %>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>
 <%= link_to 'Add New Event', new_event_path, class: 'btn btn-primary' %>

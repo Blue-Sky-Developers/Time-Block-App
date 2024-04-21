@@ -16789,3 +16789,100 @@ Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 5449
 
   [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2024-04-21 11:56:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/main_controller.rb:4:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 268)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 724)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 225)
+  Rendered layout layouts/application.html.erb (Duration: 110.7ms | Allocations: 44547)
+Completed 200 OK in 231ms (Views: 117.7ms | ActiveRecord: 4.5ms | Allocations: 68336)
+
+
+Started GET "/about" for 127.0.0.1 at 2024-04-21 11:56:46 -0400
+Processing by AboutController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 198)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1675)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 2721)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:56:47 -0400
+Processing by CalendarsController#show as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 5.1ms | Allocations: 2737)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4236)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 211)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 5701)
+Completed 200 OK in 73ms (Views: 18.2ms | ActiveRecord: 1.4ms | Allocations: 11934)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2024-04-21 11:56:49 -0400
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:25:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 19.4ms | Allocations: 5388)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 210)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 6832)
+Completed 200 OK in 59ms (Views: 23.4ms | ActiveRecord: 0.1ms | Allocations: 15386)
+
+
+Started POST "/events" for 127.0.0.1 at 2024-04-21 11:56:59 -0400
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"hello", "start_time(1i)"=>"2024", "start_time(2i)"=>"4", "start_time(3i)"=>"21", "start_time(4i)"=>"10", "start_time(5i)"=>"56", "end_time(1i)"=>"2024", "end_time(2i)"=>"4", "end_time(3i)"=>"21", "end_time(4i)"=>"15", "end_time(5i)"=>"56", "priority"=>"high"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:25:in `require_login'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/events_controller.rb:11:in `create'
+  [1m[36mEvent Create (2.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_time", "end_time", "created_at", "updated_at", "user_id", "priority") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "hello"], ["start_time", "2024-04-21 10:56:00"], ["end_time", "2024-04-21 15:56:00"], ["created_at", "2024-04-21 15:56:59.254542"], ["updated_at", "2024-04-21 15:56:59.254542"], ["user_id", 12], ["priority", 2]]
+  ↳ app/controllers/events_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/events_controller.rb:11:in `create'
+Redirected to http://127.0.0.1:3000/calendar
+Completed 302 Found in 29ms (ActiveRecord: 5.7ms | Allocations: 5442)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2024-04-21 11:56:59 -0400
+Processing by CalendarsController#show as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5:in `set_current_user'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/calendars_controller.rb:11:in `require_login'
+  Rendering layout layouts/application.html.erb
+  Rendering calendars/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."user_id" = ? AND "events"."start_time" BETWEEN ? AND ?[0m  [["user_id", 12], ["start_time", "2024-04-15"], ["start_time", "2024-04-21"]]
+  ↳ app/views/calendars/show.html.erb:3
+  Rendered /home/shrey/.asdf/installs/ruby/3.3.0/lib/ruby/gems/3.3.0/gems/simple_calendar-3.0.2/app/views/simple_calendar/_week_calendar.html.erb (Duration: 13.3ms | Allocations: 1474)
+  Rendered calendars/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 2168)
+  Rendered shared/_navbar.html.erb (Duration: 3.5ms | Allocations: 209)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 3612)
+Completed 200 OK in 64ms (Views: 50.3ms | ActiveRecord: 0.4ms | Allocations: 5056)
+
+
