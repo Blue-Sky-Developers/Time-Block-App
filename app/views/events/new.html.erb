@@ -1,4 +1,14 @@
 <%= form_with(model: @event, local: true) do |form| %>
+  <div>
+    <h1>Create New Event</h1>
+  </div>
+  <br>
+  <br>
+  <div class="tip">
+    <h3>Tip!</h3><p>Create your time blocks to be an hour or longer to maximize undisturbed focused time!</p>
+  </div>
+  <br>
+  <br>
     <div class="edit-event-form">
       <div>
         <%= form.label :name %>
