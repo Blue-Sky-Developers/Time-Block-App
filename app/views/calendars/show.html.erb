@@ -5,19 +5,20 @@
       <div class="cal-date">
         <%= date.strftime('%B %d, %Y') %>
       </div>
-      <hr>
+      <br>
       <% events.each do |event| %>
         <div class="event-wrapper priority-<%= event.priority %>">
           <div class="event-container">
             <%= link_to edit_event_path(event) do %>
-              <div class="event">
-                <h3><%= event.name %></h3>
-                <p>
-                  <strong>Start Time:</strong> <%= event.start_time.strftime('%I:%M %p') %><br>
-                  <strong>End Time:</strong> <%= event.end_time.strftime('%I:%M %p') %>
-                </p>
-              </div>
-            <% end %>
+                  <div class="event">
+                    <h3><%= event.name %></h3>
+                    <strong>Start Time:</strong> <%= event.start_time.strftime('%I:%M %p') %><br>
+                    <strong>End Time:</strong> <%= event.end_time.strftime('%I:%M %p') %>
+                    <p>Priority: <%= event.priority %></p>
+                    <%= link_to 'Edit', edit_event_path(event) %>
+                    <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } %>
+                  </div>
+              <% end %>
           </div>
         </div>
       <% end %>
