@@ -7,12 +7,14 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
     if @event.destroy
-    redirect_to calendar_path, notice: "Event deleted successfully"
+      redirect_to calendar_path, notice: "Event deleted successfully"
     else
       redirect_to calendar_path, alert: "Failed to delete event"
     end
   end
+  
 
   def show
     @event = Event.find(params[:id])
