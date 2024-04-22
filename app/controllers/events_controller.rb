@@ -7,8 +7,11 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event.deleted = true
+    if @event.destroy
     redirect_to calendar_path, notice: "Event deleted successfully"
+    else
+      redirect_to calendar_path, alert: "Failed to delete event"
+    end
   end
 
   def show
