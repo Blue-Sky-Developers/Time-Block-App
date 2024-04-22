@@ -11,9 +11,12 @@ class EventsController < ApplicationController
     redirect_to calendar_path, notice: "Event deleted successfully"
   end
 
+  def show
+    @event = Event.find(params[:id])
+  end
+
   def create
     @event = Current.user.events.build(event_params)
-    @event.deleted = false
 
     if @event.save
       respond_to do |format|
